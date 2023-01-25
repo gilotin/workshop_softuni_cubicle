@@ -1,0 +1,24 @@
+{
+  "name": "workshop_softuni_cubicle",
+  "version": "1.0.0",
+  "description": "SoftUni Web Project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilotin/workshop_softuni_cubicle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gilotin/workshop_softuni_cubicle/issues"
+  },
+  "homepage": "https://github.com/gilotin/workshop_softuni_cubicle#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
