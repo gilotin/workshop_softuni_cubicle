@@ -20,5 +20,8 @@
   "homepage": "https://github.com/gilotin/workshop_softuni_cubicle#readme",
   "devDependencies": {
     "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
