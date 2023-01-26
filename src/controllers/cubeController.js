@@ -5,9 +5,10 @@ exports.getCreateCube = (req, res) => {
 };
 
 exports.postCreateCube = (req, res) => {
-    const { name, description, difficultlyLevel, imageUr } = req.body;
+    const {name, description, imageUrl, difficultyLevel} = req.body;
     
-    let cube = new Cube(name, description, difficultlyLevel, imageUr );
+    const id = Math.random()*10 + Math.random()*0.0001;
+    let cube = new Cube(id,name, description, imageUrl, difficultyLevel );
 
     Cube.save(cube);
 
