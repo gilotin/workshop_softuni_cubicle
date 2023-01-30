@@ -11,7 +11,7 @@ const accessorySchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        maxLength: 50
+        maxLength: 500
     },
 });
 
