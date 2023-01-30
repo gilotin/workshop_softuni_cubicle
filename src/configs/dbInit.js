@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
-const dbIrl = "mongodb://127.0.0.1/27017/cubicle"
+const dbIrl = "mongodb://localhost:27017/cubicle"
 
 async function initDb(){
+    mongoose.set('strictQuery', false)
     await mongoose.connect(dbIrl);
 
     console.log('Connected to Database !');
