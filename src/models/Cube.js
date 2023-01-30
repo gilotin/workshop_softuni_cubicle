@@ -11,8 +11,8 @@ class Cube {
             (this.difficultyLevel = difficultyLevel);
     }
 
-    static save(cube) {
-        db.cubes.push(cube);
+    save(cube) {
+        db.cubes.push(this);
         const jsonData = JSON.stringify(db, null, 2);
         fs.writeFile(path.resolve(__dirname, "../db.json"), jsonData);
     }
