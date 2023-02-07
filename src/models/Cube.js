@@ -14,6 +14,7 @@ const cubeSchema = new mongoose.Schema({
         type: String,
         required: true,
         //Add http:// validation
+        match: [/^http[s]?:\/\//, 'URL is invalid!'],
     },
     difficultyLevel: {
         type: Number,
