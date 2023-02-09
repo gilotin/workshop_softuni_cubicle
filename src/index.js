@@ -5,7 +5,7 @@ const routes = require("./routes");
 const config = require("./configs/config");
 const { viewEngine } = require("./configs/tempEngine");
 const initDb = require("./configs/dbInit");
-const e = require("express");
+const authMiddleware = require('./middlewares/authMiddleware');
 
 const app = express();
 viewEngine(app);
@@ -13,6 +13,7 @@ viewEngine(app);
 app.use(express.static("src/static"));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
+app.use(authMiddleware.authentication);
 app.use(routes);
 
 initDb()
