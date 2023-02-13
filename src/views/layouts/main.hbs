@@ -13,12 +13,16 @@
                 <ul>
                     <li><img class="logo" src="/images/logo.png" /></li>
                     <li><a href="/">Browse</a></li>
-                    <li><a href="/cubes/create">Add a Cube</a></li>
-                    <li><a href="/accessories/create">Add an Accessory</a></li>
                     <li><a href="/about">About</a></li>
-                    <li><a href="/login">login</a></li>
-                    <li><a href="/logout">logout</a></li>
-                    <li><a href="/register">register</a></li>
+                    {{#if isAuthenticated}}
+                        <li><a href="/cubes/create">Add a Cube</a></li>
+                        <li><a href="/accessories/create">Add an Accessory</a></li>
+                        <li><a href="/logout">logout</a></li>
+                        <li><span id="loginName">Hello {{username}}</span></li>
+                    {{else}}
+                        <li><a href="/register">register</a></li>
+                        <li><a href="/login">login</a></li>
+                    {{/if}}
                 </ul>
             </header>
 

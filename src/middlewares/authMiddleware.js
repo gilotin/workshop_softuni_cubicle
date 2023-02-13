@@ -1,5 +1,6 @@
 const jwt = require("../lib/jsonWebToken");
 const config = require("../configs/config");
+const { response } = require("express");
 
 
 exports.authentication = async (req, res, next) => {
@@ -11,6 +12,8 @@ exports.authentication = async (req, res, next) => {
 
             req.user = decodedToken;
             req.isAuthenticated = true;
+            res.locals.username = decodedToken.username;
+            res.locals.isAuthenticated = true;
         } catch (error) {
             console.log(error.message);
             res.clearCookie('auth');
@@ -29,3 +32,4 @@ exports.isAuthenticated = (req, res, next) => {
     }
     next();
 }
+

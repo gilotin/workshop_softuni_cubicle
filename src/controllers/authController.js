@@ -1,5 +1,6 @@
 const router = require("express").Router();
 
+const { response } = require("express");
 const authService = require("../services//authService");
 
 // login
@@ -44,6 +45,12 @@ router.post("/register", async (req, res) => {
     const user = await authService.register(username, password);
 
     res.redirect("/login");
+});
+
+router.get('/logout', (req, res) =>{
+
+    res.clearCookie('auth');
+    res.redirect('/');
 });
 
 module.exports = router;

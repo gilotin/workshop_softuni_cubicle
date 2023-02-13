@@ -14,7 +14,7 @@ const cubeSchema = new mongoose.Schema({
         type: String,
         required: true,
         //Add http:// validation
-        match: [/^http[s]?:\/\//, 'URL is invalid!'],
+        match: [/^http[s]?:\/\//, "URL is invalid!"],
     },
     difficultyLevel: {
         type: Number,
@@ -25,9 +25,13 @@ const cubeSchema = new mongoose.Schema({
     accessories: [
         {
             type: mongoose.Types.ObjectId,
-            ref: "Accessory"
+            ref: "Accessory",
         },
     ],
+    owner: {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
+    },
 });
 
 const Cube = mongoose.model("Cube", cubeSchema);
