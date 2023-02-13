@@ -58,7 +58,7 @@ exports.postEditCube = async (req, res) => {
 
     await cubeService.update(req.params.cubeId, { name, description, imageUrl, difficultyLevel });
 
-    res.redirect(`/cubes/${req.params.cubeId/details}`);
+    res.redirect(`/cubes/${req.params.cubeId}/details`);
 };
 
 exports.getDeleteCube = async (res, req) => {
